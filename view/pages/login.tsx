@@ -10,6 +10,7 @@ import {
   } from 'formik';
 import Link from 'next/link';
 import Return from '../Components/Return';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
   
   interface MyFormValues {
     firstName: string;
@@ -30,14 +31,14 @@ const login : NextPage = () => {
            actions.setSubmitting(false);
          }}
        >
-         <Form className="flex flex-col items-center justify-evenly h-96 mt-40 text-white">
-           <h1 className='mb-8' style={{"fontSize":"48px","fontWeight":"bold"}}>Login</h1>
+         <Form className="flex flex-col items-center justify-evenly  mt-40 text-white">
+           <h1 className='mb-16' style={{"fontSize":"48px","fontWeight":"bold"}}>Login</h1>
 
-            <div className="flex flex-col items-center mb-4">
+            <div className="flex flex-col items-center mb-10">
            <label className="hidden" htmlFor="email">Email Address</label>
            <Field type="text" id="email" name="email" placeholder="email address" required className="bg-transparent py-2 border-b-2 placeholder-gray-300 focus:outline-none focus:bg-transparent"/>
            </div>
-           <div className="flex flex-col items-center mb-4">
+           <div className="flex flex-col items-center mb-10">
            <label className="hidden" htmlFor="password">Password</label>
            <Field type="password" id="password" name="password" placeholder="password" required className="bg-transparent py-2 border-b-2 placeholder-white focus:outline-none focus:bg-transparent"/>
            </div>           
@@ -45,8 +46,11 @@ const login : NextPage = () => {
            <Link href="/password-reset">Forgot password ?</Link>
            <div className="flex flex-col items-center mt-4">
                <span>Or Login with :</span>
-               <div className='w-60 h-20 flex'>
-               <i className="fab fa-google"></i>
+               <div className='w-96 h-20 flex justify-between mt-16'>
+               <span className="h-20 w-20 bg-white rounded-full text-black" ><i className="fa fa-google"></i></span>
+               <span className="h-20 w-20 bg-white rounded-full text-black" ><i className="fab fa-facebook-f"></i></span>
+               <span className="h-20 w-20 bg-white rounded-full text-black" ><i className="fab fa-github"></i></span>
+               <span className="h-20 w-20 bg-white rounded-full text-black" ><i className="fab fa-linkedin-in"></i></span>
                </div>
            </div>
          </Form>
