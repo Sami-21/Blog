@@ -23,7 +23,7 @@ const Navigation = (props:{navItems:string[], authenticated:boolean}) => {
                     </>           
                     :<>
                     <li className='mr-12'><Link href="/login"> Login</Link></li>
-                    <li className='py-2 px-6 bg-blue-800 rounded-md'><Link href="/"> Sign up</Link></li>
+                    <li className='py-2 px-6 bg-blue-800 rounded-md'><Link href="/signup"> Sign up</Link></li>
                     </>
                     }                                                                                   
                 </ul>        
