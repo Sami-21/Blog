@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-
+import Image from 'next/image'
+import pic from "../Ressources/doom-eternal-pc-ps4-xone-switch-35158d3f.jpg"
 
 const Navigation = (props:{navItems:string[], authenticated:boolean}) => {
     return (
@@ -11,13 +12,18 @@ const Navigation = (props:{navItems:string[], authenticated:boolean}) => {
             <div className=''>
                 <ul className=' min-w-max flex justify-between items-center'>
                     {props.navItems.map((Element,index) => (
-                        <li key={index} className='mr-12'><Link href="/">{Element}</Link></li>
+                        <li key={index} className='mr-12'><Link href={`/${Element}`}>{Element}</Link></li>
                     ))}
                     {props.authenticated
                     ?
                      <>
                     <div className="relative w-14 h-14">
-                      <img className="w-full h-full rounded-full" src="https://d3isma7snj3lcx.cloudfront.net/images/gallery/33/338017/doom-eternal-pc-ps4-xone-switch-35158d3f.jpg" alt="user image" />
+                    <Image
+                    className="rounded-full"
+                     src={pic} alt="user image"   
+                     width={56}
+                     height={56}
+      />
                       <div className="absolute h-4 w-4 my-1 rounded-full bg-red-500 z-2" style={{"top":"-5px","left":"-5px"}}></div>
                     </div>  
                     </>           

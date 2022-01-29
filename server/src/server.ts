@@ -1,31 +1,56 @@
 process.env['NODE_CONFIG_DIR'] = __dirname + '/configs';
 
-import 'dotenv/config';
-import express, { Request, Response } from 'express';
-import App from '@/app';
-import AuthRoute from '@routes/auth.route';
-import IndexRoute from '@routes/index.route';
-import UsersRoute from '@routes/users.route';
-import validateEnv from '@utils/validateEnv';
-import { User } from './interfaces/users.interface';
+// import 'dotenv/config';
+// import App from '@/app';
+// import AuthRoute from '@routes/auth.route';
+// import IndexRoute from '@routes/index.route';
+// import UsersRoute from '@routes/users.route';
+// import validateEnv from '@utils/validateEnv';
 
-validateEnv();
+// validateEnv();
 
 // const app = new App([new IndexRoute(), new UsersRoute(), new AuthRoute()]);
-const app = express();
-const port = 5000;
-const dummy_user: User = {
-  _id: 'é56414',
-  fullname: 'samimaachi',
-  email: 'samovitch@gmail.com',
-  password: 'password****',
-};
 
-app.post('/login', (req: Request, res: Response) => {
-  console.log('why the fuck');
-  res.status(200).send('fuck');
+import express from 'express';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+import AuthRoute from './routes/Auth.route';
+import blogRoute from './routes/blog.route';
+import { dbConnection } from './databases/index';
+
+//Server initialized
+
+const app: express.Application = express();
+
+//getting environment variables
+
+dotenv.config();
+
+//middlewares
+
+app.use(express.json());
+
+//Connection to DataBase
+
+mongoose
+  .connect(dbConnection.url, dbConnection.options)
+  .then(() => console.log('connection successful'))
+  .catch(err => console.log(err));
+
+// AuthRoutes ('/login'  , '/signup')
+
+app.use(AuthRoute);
+
+// BlogRoute ( '/blog')
+
+app.use(blogRoute);
+
+//main route or whatever
+
+app.get('/', (req: express.Request, res: express.Response) => {
+  res.send('WTF IS THIS SHITTY SERVER');
 });
 
-app.listen(port, () => {
-  console.log(`I CAN'T BELIEVE WHAT I AM DOING!. MAAAAAAAAAAN THIS THING IS REALLY MESSED UP ${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`server is up and running on port ${process.env.PORT}`);
 });
