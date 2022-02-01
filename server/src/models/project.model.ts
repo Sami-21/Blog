@@ -10,9 +10,9 @@ const projectSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    gallery: {
-      type: String,
-      required: true,
+    image: {
+      data: Buffer,
+      contentType: String,
     },
   },
   { timestamps: true },

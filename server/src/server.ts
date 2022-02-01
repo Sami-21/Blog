@@ -5,8 +5,10 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import AuthRoute from './routes/Auth.route';
-import blogRoute from './routes/blog.route';
+import BlogRoute from './routes/blog.route';
+import PortfolioRoute from './routes/porfolio.route';
 import { dbConnection } from './databases/index';
+import bodyParser from 'body-parser';
 
 //Server initialized
 
@@ -20,6 +22,7 @@ dotenv.config();
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(bodyParser.raw());
 
 //Connection to DataBase
 
@@ -34,12 +37,15 @@ app.use(AuthRoute);
 
 // BlogRoute ( '/blog')
 
-app.use(blogRoute);
+app.use(BlogRoute);
+
+// PortfolioRoute ( '/blog')
+
+app.use(PortfolioRoute);
 
 //main route or whatever
 
 app.get('/', (req: express.Request, res: express.Response) => {
-  res.cookie('test', 21212121, { maxAge: 999999, httpOnly: true });
   res.send('madafakin');
   console.log('madafak');
 });
