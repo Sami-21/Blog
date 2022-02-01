@@ -1,7 +1,3 @@
-// import config from 'config';
-// import { dbConfig } from '@interfaces/db.interface';
-
-// const { host, port, database }: dbConfig = config.get('dbConfig');
 import dotenv from 'dotenv';
 dotenv.config();
 

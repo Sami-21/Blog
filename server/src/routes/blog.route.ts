@@ -1,16 +1,16 @@
-import ArticleModel from '@/models/article.model';
+import { CreateNewPost, DeleteUniquePost, GetAllPosts, GetUniquePost, ModifyUniquePost } from '@/controllers/blog.controller';
 import express from 'express';
 
 const blogRoute: express.Router = express.Router();
 
-blogRoute.post('/blog', async (req: express.Request, res: express.Response) => {
-  const { title, body, author } = req.body;
-  try {
-    await ArticleModel.create({ title, body, author });
-    res.status(200).send('post created with success');
-  } catch (error) {
-    console.error(error.message);
-  }
-});
+blogRoute.post('/blog', CreateNewPost);
+
+blogRoute.get('/blog', GetAllPosts);
+
+blogRoute.get('/blog/:id', GetUniquePost);
+
+blogRoute.patch('/blog/:id', ModifyUniquePost);
+
+blogRoute.delete('/blog/:id', DeleteUniquePost);
 
 export default blogRoute;

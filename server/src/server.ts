@@ -1,19 +1,9 @@
 process.env['NODE_CONFIG_DIR'] = __dirname + '/configs';
 
-// import 'dotenv/config';
-// import App from '@/app';
-// import AuthRoute from '@routes/auth.route';
-// import IndexRoute from '@routes/index.route';
-// import UsersRoute from '@routes/users.route';
-// import validateEnv from '@utils/validateEnv';
-
-// validateEnv();
-
-// const app = new App([new IndexRoute(), new UsersRoute(), new AuthRoute()]);
-
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
 import AuthRoute from './routes/Auth.route';
 import blogRoute from './routes/blog.route';
 import { dbConnection } from './databases/index';
@@ -29,6 +19,7 @@ dotenv.config();
 //middlewares
 
 app.use(express.json());
+app.use(cookieParser());
 
 //Connection to DataBase
 
@@ -48,7 +39,9 @@ app.use(blogRoute);
 //main route or whatever
 
 app.get('/', (req: express.Request, res: express.Response) => {
-  res.send('WTF IS THIS SHITTY SERVER');
+  res.cookie('test', 21212121, { maxAge: 999999, httpOnly: true });
+  res.send('madafakin');
+  console.log('madafak');
 });
 
 app.listen(process.env.PORT, () => {

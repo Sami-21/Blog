@@ -1,6 +1,10 @@
 import express from 'express';
 import UserModel from '@/models/users.model';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export const Signup_Controller = async (req: express.Request, res: express.Response) => {
   // sent data from front-end
@@ -17,9 +21,15 @@ export const Signup_Controller = async (req: express.Request, res: express.Respo
     const HashedPassword: string = await bcrypt.hash(password, 10);
 
     // New user created
-    await UserModel.create({ FullName: FullName, email: email, password: HashedPassword });
+    const newUser = await UserModel.create({ FullName: FullName, email: email, password: HashedPassword });
+    const data = {
+      date: Date(),
+      userId: newUser._id,
+    };
+    const token = jwt.sign(data, process.env.JWT_SECRET_KEY);
+    res.cookie('token', token, { maxAge: 9000, httpOnly: true });
     // Response sent status 200
-    res.status(200).send('user saved with success');
+    res.send(`new user created ,welcome ${newUser.FullName} your token is ${req.cookies}`);
   } catch (error) {
     // Catching Errors
     res.send(error);
@@ -37,6 +47,12 @@ export const Login_Controller = async (req: express.Request, res: express.Respon
       const check = await bcrypt.compare(password, UserExist.password);
       //If password correct send Response status 200
       if (check) {
+        const data = {
+          date: Date(),
+          userId: UserExist._id,
+        };
+        const token = jwt.sign(data, process.env.JWT_SECRET_KEY);
+        res.cookie('token', token, { maxAge: 9000, httpOnly: true });
         res.status(200).send(`welcome ${UserExist.FullName}`);
         // Throw Error if no
       } else throw 'incorrect password';
