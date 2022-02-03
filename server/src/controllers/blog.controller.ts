@@ -1,8 +1,8 @@
 import express from 'express';
 import ArticleModel from '@/models/article.model';
 
-// New Post Creation controller
-export const CreateNewPost = async (req: express.Request, res: express.Response) => {
+// New Post Creation Handler
+export const CreateNewPostHandler = async (req: express.Request, res: express.Response) => {
   const { title, body, author } = req.body;
   try {
     await ArticleModel.create({ title, body, author });
@@ -11,8 +11,8 @@ export const CreateNewPost = async (req: express.Request, res: express.Response)
     console.error(error.message);
   }
 };
-// Getting all post of a certain user
-export const GetAllPosts = async (req: express.Request, res: express.Response) => {
+// Getting all post of a certain user Handler
+export const GetAllPostsHandler = async (req: express.Request, res: express.Response) => {
   const { author } = req.body;
   try {
     const UserPosts = await ArticleModel.find({ author });
@@ -23,8 +23,8 @@ export const GetAllPosts = async (req: express.Request, res: express.Response) =
     res.status(400).send(error);
   }
 };
-// Getting a unique post
-export const GetUniquePost = async (req: express.Request, res: express.Response) => {
+// Getting a unique post Handler
+export const GetUniquePostHandler = async (req: express.Request, res: express.Response) => {
   try {
     const id = req.params.id;
     const post = await ArticleModel.findById(id);
@@ -35,8 +35,8 @@ export const GetUniquePost = async (req: express.Request, res: express.Response)
     res.status(400).send(error);
   }
 };
-// Modify unique post
-export const ModifyUniquePost = async (req: express.Request, res: express.Response) => {
+// Modify unique post Handler
+export const UpdateUniquePostHandler = async (req: express.Request, res: express.Response) => {
   try {
     const id = req.params.id;
     const { title, body } = req.body;
@@ -48,8 +48,8 @@ export const ModifyUniquePost = async (req: express.Request, res: express.Respon
     res.status(400).send(error);
   }
 };
-// delete unique post
-export const DeleteUniquePost = async (req: express.Request, res: express.Response) => {
+// delete unique post Handler
+export const DeleteUniquePostHandler = async (req: express.Request, res: express.Response) => {
   try {
     const id = req.params.id;
     const PostExist = await ArticleModel.findById(id);

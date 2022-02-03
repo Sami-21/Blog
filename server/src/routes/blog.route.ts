@@ -1,16 +1,22 @@
-import { CreateNewPost, DeleteUniquePost, GetAllPosts, GetUniquePost, ModifyUniquePost } from '@/controllers/blog.controller';
+import {
+  CreateNewPostHandler,
+  DeleteUniquePostHandler,
+  GetAllPostsHandler,
+  GetUniquePostHandler,
+  UpdateUniquePostHandler,
+} from '@/controllers/blog.controller';
 import express from 'express';
 
 const BlogRoute: express.Router = express.Router();
 
-BlogRoute.post('/blog', CreateNewPost);
+BlogRoute.post('/blog', CreateNewPostHandler);
 
-BlogRoute.get('/blog', GetAllPosts);
+BlogRoute.get('/blog', GetAllPostsHandler);
 
-BlogRoute.get('/blog/:id', GetUniquePost);
+BlogRoute.get('/blog/:id', GetUniquePostHandler);
 
-BlogRoute.patch('/blog/:id', ModifyUniquePost);
+BlogRoute.patch('/blog/:id', UpdateUniquePostHandler);
 
-BlogRoute.delete('/blog/:id', DeleteUniquePost);
+BlogRoute.delete('/blog/:id', DeleteUniquePostHandler);
 
 export default BlogRoute;

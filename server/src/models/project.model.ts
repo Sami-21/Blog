@@ -10,9 +10,14 @@ const projectSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    image: {
-      data: Buffer,
-      contentType: String,
+    imagesURL: [
+      {
+        type: String,
+      },
+    ],
+    user_id: {
+      type: String,
+      required: true,
     },
   },
   { timestamps: true },
