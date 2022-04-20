@@ -1,0 +1,38 @@
+.TextContainer {
+    width: 100vw;
+    height: 100vh;
+}
+
+.IntroText {
+    position: relative;
+    font-size: 124px;
+    color: #fff;
+    opacity: 1;
+}
+
+.FirstTextTransition {
+    position: absolute;
+    font-size: 124px;
+    color: #fff;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+}
+
+.SecondTextTransition {
+    position: absolute;
+    font-size: 124px;
+    color: #fff;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+.IntroTextBlur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 124px;
+    color: #48ff50;
+    filter: blur(20px);
+}

@@ -1,13 +1,17 @@
-import type { NextPage } from 'next'
-import Navigation from '../Components/Navigation'
+import type { NextPage } from "next";
+import IntroText from "../Components/IntroText";
+import NavBar from "../Components/NavBar";
+// import Intro from '../Components/Intro'
+// import intro from '../styles/Intro.module.css'
 
 const Home: NextPage = () => {
   return (
-    <div className='h-screen w-screen bg-gray-900 flex justify-center items-center'>
-      <Navigation navItems={["Home","Contact"]} authenticated={false}/>
-     <h1 className='text-4xl text-white '>I am the  main page</h1>
+    <div className="min-h-screen w-screen flex flex-col justify-center items-center pt-40">
+      <NavBar />
+      {/* <Intro/> */}
+      <IntroText />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

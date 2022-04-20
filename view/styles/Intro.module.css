@@ -1,0 +1,40 @@
+.Pre_Start_Screen {
+  width: 100vw;
+  height: 100vh;
+  background-color: #00090a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+
+.flash:nth-child(1) {
+  height: 25px;
+  width: 25px;
+  filter: blur(50px);
+  border-radius: 50%;
+}
+
+.flash:nth-child(2) {
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  filter: blur(20px);
+}
+
+.flash:nth-child(3) {
+}
+
+@keyframes On {
+  0% {
+  }
+  16.66% {
+  }
+}

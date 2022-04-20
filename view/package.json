@@ -12,6 +12,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@headlessui/react": "^1.4.2",
+    "@mui/material": "^5.6.1",
+    "@mui/styled-engine-sc": "^5.6.1",
     "axios": "^0.24.0",
     "formik": "^2.2.9",
     "next": "12.0.7",
@@ -21,7 +23,8 @@
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@types/node": "16.11.12",
@@ -30,6 +33,7 @@
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
     "postcss": "^8.4.4",
+    "prettier": "2.6.2",
     "tailwindcss": "^2.2.19",
     "typescript": "4.5.2"
   }

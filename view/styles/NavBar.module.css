@@ -1,0 +1,45 @@
+.NavBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    background-color: black;
+    z-index: 1;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.logo {
+    position: relative;
+    font-size: 104px;
+    color: #48ff50;
+}
+
+.text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(50%, -50%);
+}
+
+.blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(50%, -50%);
+    filter: blur(20px);
+}
+
+.NavBarItemsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70vw;
+    height: 150px;
+    font-size: 44px;
+}
