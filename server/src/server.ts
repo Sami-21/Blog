@@ -23,8 +23,11 @@ dotenv.config();
 //middlewares
 
 app.use(express.json());
+
 app.use(cookieParser());
+
 app.use(bodyParser.raw());
+
 app.use(cors());
 
 //Connection to DataBase + using Gridfs
@@ -58,8 +61,8 @@ app.use(PortfolioRoute);
 //main route or whatever
 
 app.get('/', (req: express.Request, res: express.Response) => {
-  res.send('madafakin');
-  console.log('madafak');
+  res.send('sent to the client');
+  console.log('logged in the console');
 });
 
 app.listen(process.env.PORT, () => {

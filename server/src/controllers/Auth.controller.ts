@@ -28,6 +28,7 @@ export const Signup_Controller = async (req: express.Request, res: express.Respo
     };
     const token = jwt.sign(data, process.env.JWT_SECRET_KEY);
     res.cookie('token', token, { maxAge: 9000, httpOnly: true });
+
     // Response sent status 200
     res.send(`new user created ,welcome ${newUser.FullName} your token is ${req.cookies}`);
   } catch (error) {
