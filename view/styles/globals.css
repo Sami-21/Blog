@@ -2,7 +2,7 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-family: OCR A Std, VT323, sans-serif;
+    font-family: VT323, sans-serif;
     background-color: #00090a;
     overflow-x: hidden;
 }

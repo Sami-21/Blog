@@ -16,8 +16,9 @@
 
 .logo {
     position: relative;
-    font-size: 104px;
+    font-size: 124px;
     color: #48ff50;
+    cursor: pointer;
 }
 
 .text {
@@ -32,7 +33,7 @@
     top: 0;
     left: 0;
     transform: translate(50%, -50%);
-    filter: blur(20px);
+    filter: blur(10px);
 }
 
 .NavBarItemsContainer {
@@ -41,5 +42,24 @@
     align-items: center;
     width: 70vw;
     height: 150px;
-    font-size: 44px;
+    font-size: 64px;
+}
+
+.NavBarItem {
+    position: relative;
+    pointer-events: none;
+}
+
+.ActiveItem {
+    color: #48ff50;
+}
+
+.ActiveItem::before {
+    position: absolute;
+    top: -16px;
+    left: 0;
+    content: attr(data-before);
+    color: #48ff50;
+    filter: blur(5px);
+    z-index: -1;
 }

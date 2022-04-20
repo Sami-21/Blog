@@ -15,14 +15,18 @@ const IntroText = () => {
   return (
     <div className={style.TextContainer}>
       <h1 className={style.IntroText}>
-        {/* <span className={`${style.FirstTextTransition} `}>
-          {IntroTextState1}
+        <span className={`${style.IntroText}  `}>
+          {IntroTextState3.slice(0, 3)} <br />
+          {IntroTextState3.slice(3, 14)}
+          <br />
+          {IntroTextState3.slice(14)}
         </span>
-        <span className={`${style.SecondTextTransition}  `}>
-          {IntroTextState2}
-        </span> */}
-        <span className={`${style.IntroText}  `}>{IntroTextState3}</span>
-        <span className={`${style.IntroTextBlur}  `}>{IntroTextState3}</span>
+        <span className={`${style.IntroTextBlur}  `}>
+          {IntroTextState3.slice(0, 3)} <br />
+          {IntroTextState3.slice(3, 14)}
+          <br />
+          {IntroTextState3.slice(14)}
+        </span>
       </h1>
     </div>
   );

@@ -6,7 +6,7 @@ import NavBar from "../Components/NavBar";
 
 const Home: NextPage = () => {
   return (
-    <div className="min-h-screen w-screen flex flex-col justify-center items-center pt-40">
+    <div className="min-h-screen w-screen flex flex-col justify-center items-center">
       <NavBar />
       {/* <Intro/> */}
       <IntroText />
