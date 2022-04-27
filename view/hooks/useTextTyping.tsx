@@ -6,7 +6,7 @@ enum Phase {
   Deleting,
 }
 
-const useTextTyping = (TargetText: string, delay: number) => {
+const useTextTyping = (TargetText: string, TypeSpeed: number) => {
   const [phase, setphase] = useState(Phase.Typing);
   const [Text, setText] = useState(``);
   useEffect(() => {
@@ -20,7 +20,7 @@ const useTextTyping = (TargetText: string, delay: number) => {
 
         const timeout = setTimeout(() => {
           setText(NewText);
-        }, 60);
+        }, TypeSpeed);
         return () => clearTimeout(timeout);
       }
 

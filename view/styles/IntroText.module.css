@@ -3,6 +3,7 @@
     width: 100vw;
     height: 100vh;
     padding-left: 75px;
+    overflow: hidden;
 }
 
 .IntroText {
@@ -16,19 +17,35 @@
 .FirstTextTransition {
     position: absolute;
     font-size: 144px;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.2);
     top: 0;
     left: 0;
-    opacity: 0.2;
 }
 
 .SecondTextTransition {
     position: absolute;
     font-size: 144px;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.5);
     top: 0;
     left: 0;
-    opacity: 0.5;
+}
+
+.ThirdTextTransition {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Disappeared1 {
+    animation: fade1 300ms forwards;
+}
+
+.Disappeared2 {
+    animation: fade2 1000ms cubic-bezier(1, 0, 0, 1) forwards;
+}
+
+.Disappeared3 {
+    animation: fade3 1700ms cubic-bezier(1, 0, 0, 1) forwards;
 }
 
 .IntroTextBlur {
@@ -39,4 +56,37 @@
     color: #48ff50;
     filter: blur(10px);
     z-index: 10;
+}
+
+@keyframes fade1 {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade2 {
+    0% {
+        opacity: 0;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade3 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

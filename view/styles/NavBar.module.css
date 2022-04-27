@@ -8,8 +8,8 @@
     justify-content: space-between;
     align-items: center;
     color: #ffffff;
-    background-color: black;
-    z-index: 1;
+    background-color: #00090a;
+    z-index: 1000000;
     padding-left: 50px;
     padding-right: 50px;
 }
