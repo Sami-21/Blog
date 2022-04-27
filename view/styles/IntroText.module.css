@@ -37,15 +37,26 @@
 }
 
 .Disappeared1 {
-    animation: fade1 300ms forwards;
+    animation-name: fade1;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+    animation-delay: 0;
 }
 
 .Disappeared2 {
-    animation: fade2 1000ms cubic-bezier(1, 0, 0, 1) forwards;
+    animation-name: fade1;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+    animation-delay: 75ms;
+    opacity: 0;
 }
 
 .Disappeared3 {
-    animation: fade3 1700ms cubic-bezier(1, 0, 0, 1) forwards;
+    animation-name: fade2;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+    animation-delay: 200ms;
+    opacity: 0;
 }
 
 .IntroTextBlur {
@@ -55,14 +66,17 @@
     font-size: 144px;
     color: #48ff50;
     filter: blur(10px);
-    z-index: 10;
+    z-index: -10;
 }
 
 @keyframes fade1 {
     0% {
         opacity: 0;
     }
-    15% {
+    45% {
+        opacity: 1;
+    }
+    55% {
         opacity: 1;
     }
     100% {
@@ -74,17 +88,11 @@
     0% {
         opacity: 0;
     }
-    85% {
+    45% {
         opacity: 1;
     }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes fade3 {
-    0% {
-        opacity: 0;
+    55% {
+        opacity: 1;
     }
     100% {
         opacity: 1;

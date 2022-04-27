@@ -14,6 +14,8 @@ const IntroText = () => {
   return (
     <div className={style.TextContainer}>
       <h1 className={style.IntroText}>
+        {/* First State */}
+
         <span className={`${style.FirstTextTransition}`}>
           {IntroTextState1.split("")
             .slice(0, 3)
@@ -24,8 +26,29 @@ const IntroText = () => {
                 </span>
               );
             })}
+          <br />
+          {IntroTextState1.split("")
+            .slice(3, 14)
+            .map((char, index) => {
+              return (
+                <span key={index} className={style.Disappeared1}>
+                  {char}
+                </span>
+              );
+            })}
+          <br />
+          {IntroTextState1.split("")
+            .slice(14)
+            .map((char, index) => {
+              return (
+                <span key={index} className={style.Disappeared1}>
+                  {char}
+                </span>
+              );
+            })}
         </span>
-        <br />
+
+        {/* Second State */}
 
         <span className={`${style.SecondTextTransition}  `}>
           {IntroTextState2.split("")
@@ -35,8 +58,28 @@ const IntroText = () => {
                 {char}
               </span>
             ))}
+          <br />
+
+          {IntroTextState2.split("")
+            .slice(3, 14)
+            .map((char, index) => (
+              <span key={index} className={` ${style.Disappeared2}`}>
+                {char}
+              </span>
+            ))}
+          <br />
+
+          {IntroTextState2.split("")
+            .slice(14)
+            .map((char, index) => (
+              <span key={index} className={` ${style.Disappeared2}`}>
+                {char}
+              </span>
+            ))}
         </span>
-        <br />
+
+        {/* Third State */}
+
         <span className={style.ThirdTextTransition}>
           {IntroTextState3.split("")
             .slice(0, 3)
@@ -45,9 +88,26 @@ const IntroText = () => {
                 {char}
               </span>
             ))}
+          <br />
+
+          {IntroTextState3.split("")
+            .slice(3, 14)
+            .map((char, index) => (
+              <span className={`${style.Disappeared3}  `} key={index}>
+                {char}
+              </span>
+            ))}
+          <br />
+
+          {IntroTextState3.split("")
+            .slice(14)
+            .map((char, index) => (
+              <span className={`${style.Disappeared3}  `} key={index}>
+                {char}
+              </span>
+            ))}
         </span>
 
-        <br />
         {/* {IntroTextState3.split("")
           .slice(3, 14)
           .map((char, index) => (
@@ -63,7 +123,35 @@ const IntroText = () => {
               {char}
             </span>
           ))} */}
-        {/* <span className={`${style.IntroTextBlur}  `}>
+        <span className={style.IntroTextBlur}>
+          {IntroTextState3.split("")
+            .slice(0, 3)
+            .map((char, index) => (
+              <span className={`${style.Disappeared3}    `} key={index}>
+                {char}
+              </span>
+            ))}
+          <br />
+
+          {IntroTextState3.split("")
+            .slice(3, 14)
+            .map((char, index) => (
+              <span className={`${style.Disappeared3}    `} key={index}>
+                {char}
+              </span>
+            ))}
+          <br />
+
+          {IntroTextState3.split("")
+            .slice(14)
+            .map((char, index) => (
+              <span className={`${style.Disappeared3}    `} key={index}>
+                {char}
+              </span>
+            ))}
+        </span>
+
+        {/* <span className={``}>
           {IntroTextState3.slice(0, 3)} <br />
           {IntroTextState3.slice(3, 14)}
           <br />
