@@ -1,7 +1,7 @@
 .TextContainer {
     padding-top: 150px;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 200px);
     padding-left: 75px;
     overflow: hidden;
 }
@@ -12,6 +12,8 @@
     color: #fff;
     opacity: 1;
     z-index: 100;
+    width: 100%;
+    height: 200px;
 }
 
 .FirstTextTransition {
@@ -38,24 +40,24 @@
 
 .Disappeared1 {
     animation-name: fade1;
-    animation-duration: 250ms;
+    animation-duration: 60ms;
     animation-fill-mode: forwards;
     animation-delay: 0;
 }
 
 .Disappeared2 {
     animation-name: fade1;
-    animation-duration: 250ms;
+    animation-duration: 60ms;
     animation-fill-mode: forwards;
-    animation-delay: 75ms;
+    animation-delay: 40ms;
     opacity: 0;
 }
 
-.Disappeared3 {
+.Showed {
     animation-name: fade2;
-    animation-duration: 250ms;
+    animation-duration: 60ms;
     animation-fill-mode: forwards;
-    animation-delay: 200ms;
+    animation-delay: 60ms;
     opacity: 0;
 }
 
