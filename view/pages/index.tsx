@@ -9,12 +9,12 @@ import Noisebackground from "../Components/Noisebackground";
 
 const Home: NextPage = () => {
   return (
-    <div className="relative min-h-screen w-screen flex flex-col justify-center items-center">
+    <div className=" min-h-screen w-screen  pt-36">
       <Noisebackground />
       <NavBar />
       {/* <Intro/>  */}
       <IntroText />
-      {/* <AboutSection /> */}
+      <AboutSection />
     </div>
   );
 };

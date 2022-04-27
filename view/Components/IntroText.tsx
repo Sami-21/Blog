@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useEffect } from "react";
 import useTextTyping from "../hooks/useTextTyping";
 import style from "../styles/IntroText.module.css";
 
@@ -10,6 +11,27 @@ const IntroText = () => {
   const TextState1: string = useTextTyping(Transition1, 60);
   const TextState2: string = useTextTyping(Transition2, 60);
   const TextState3: string = useTextTyping(Transition3, 60);
+
+  const elementInViewport = (el: any): boolean => {
+    var top = el.offsetTop;
+    var left = el.offsetLeft;
+    var width = el.offsetWidth;
+    var height = el.offsetHeight;
+
+    while (el.offsetParent) {
+      el = el.offsetParent;
+      top += el.offsetTop;
+      left += el.offsetLeft;
+    }
+
+    return (
+      top >= window.pageYOffset &&
+      left >= window.pageXOffset &&
+      top + height <= window.pageYOffset + window.innerHeight &&
+      left + width <= window.pageXOffset + window.innerWidth
+    );
+  };
+
   return (
     <div className={style.TextContainer}>
       <h1 className={style.IntroText}>

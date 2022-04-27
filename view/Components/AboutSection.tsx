@@ -9,13 +9,11 @@ const AboutSection = () => {
   let Transition3: string = "About";
   return (
     <div className={style.TextContainer}>
-      <h1 className={style.IntroText}>
-        <CODTextEffect
-          Transition1={Transition1}
-          Transition2={Transition2}
-          Transition3={Transition3}
-        ></CODTextEffect>
-      </h1>
+      <CODTextEffect
+        Transition1={Transition1}
+        Transition2={Transition2}
+        Transition3={Transition3}
+      ></CODTextEffect>
     </div>
   );
 };
