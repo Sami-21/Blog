@@ -10,7 +10,7 @@ const Noisebackground = () => {
             <animate
               attributeName="baseFrequency"
               dur="1.5s"
-              values="0.9 0.9; 0.8 0.8 ; 0.9 0.9"
+              values="0.9 0.9; 0.6 0.6 ; 0.9 0.9"
               repeatCount={"indefinite"}
             ></animate>
           </feTurbulence>

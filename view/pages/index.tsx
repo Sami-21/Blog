@@ -9,7 +9,7 @@ import Noisebackground from "../Components/Noisebackground";
 
 const Home: NextPage = () => {
   return (
-    <div className=" min-h-screen w-screen  pt-36">
+    <div className=" min-h-screen w-screen pt-36">
       <Noisebackground />
       <NavBar />
       {/* <Intro/>  */}

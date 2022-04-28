@@ -1,42 +1,52 @@
-.TextContainer {
-    padding-top: 150px;
+.ContentContainer {
     width: 100vw;
-    height: 100vh;
-    padding-left: 75px;
+    height: 750px;
+    padding: 0 100px;
 }
 
-.IntroText {
+.TextContainer {
     position: relative;
-    font-size: 144px;
-    color: #fff;
-    opacity: 1;
-    z-index: 100;
+    top: 250px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: white;
+    overflow: visible;
 }
 
-.FirstTextTransition {
-    position: absolute;
-    font-size: 144px;
-    color: #fff;
-    top: 0;
-    left: 0;
-    opacity: 0.2;
+.Text {
+    font-size: 40px;
+    width: calc(100% - 500px);
 }
 
-.SecondTextTransition {
-    position: absolute;
-    font-size: 144px;
-    color: #fff;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
+.MyGIF {
+    position: relative;
+    background-image: url(../public/MOSHED-2022-3-28-0-11-11.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-.IntroTextBlur {
+.MyGIF::after {
+    content: "";
+    background-color: #48ff51;
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 144px;
-    color: #48ff50;
-    filter: blur(10px);
-    z-index: 10;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    filter: blur(25px);
+}
+
+.MyGIFContainer {
+    width: 450px;
+    height: 450px;
+    background: #48ff50;
+    border-radius: 50%;
+    z-index: 1000;
 }

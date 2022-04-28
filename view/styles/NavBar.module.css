@@ -10,11 +10,13 @@
     color: #ffffff;
     background-color: #00090a;
     z-index: 100;
-    padding: 0 50px;
+    padding: 0 100px;
 }
 
 .logo {
     position: relative;
+    width: fit-content;
+    height: fit-content;
     font-size: 124px;
     color: #48ff50;
     cursor: pointer;
@@ -24,14 +26,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(50%, -50%);
+    transform: translateY(-50%);
 }
 
 .blur {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(50%, -50%);
+    transform: translateY(-50%);
     filter: blur(10px);
 }
 
