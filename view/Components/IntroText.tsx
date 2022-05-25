@@ -14,7 +14,7 @@ const IntroText = () => {
 
   return (
     <div className={style.TextContainer}>
-      <h1 className={style.IntroText}>
+      <h1 id="introText" className={`${style.IntroText} md:text-base `}>
         {/* First State */}
 
         <span className={`${style.FirstTextTransition}`}>

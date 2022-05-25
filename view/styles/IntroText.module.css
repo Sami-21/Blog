@@ -1,94 +1,94 @@
 .TextContainer {
-    width: 100vw;
-    height: 100vh;
-    padding-left: 100px;
+  width: 100vw;
+  height: 100vh;
+  padding-left: 100px;
 }
 
 .IntroText {
-    position: relative;
-    font-size: 192px;
-    color: #fff;
-    opacity: 1;
-    z-index: 5;
-    width: 100%;
-    line-height: 200px;
+  position: relative;
+  font-size: 192px;
+  color: #fff;
+  opacity: 1;
+  z-index: 5;
+  width: 100%;
+  line-height: 200px;
 }
 
 .FirstTextTransition {
-    position: absolute;
-    font-size: 192px;
-    color: rgba(255, 255, 255, 0.2);
-    top: 0;
-    left: 0;
-    overflow: hidden;
+  position: absolute;
+  font-size: 192px;
+  color: rgba(255, 255, 255, 0.2);
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 .SecondTextTransition {
-    position: absolute;
-    font-size: 192px;
-    color: rgba(255, 255, 255, 0.5);
-    top: 0;
-    left: 0;
-    overflow: hidden;
+  position: absolute;
+  font-size: 192px;
+  color: rgba(255, 255, 255, 0.5);
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 .ThirdTextTransition {
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 .Disappeared1 {
-    animation: 60ms forwards 0ms fade-in-out;
+  animation: 60ms forwards 0ms fade-in-out;
 }
 
 .Disappeared2 {
-    animation: 60ms forwards 40ms fade-in-out;
-    opacity: 0;
+  animation: 60ms forwards 40ms fade-in-out;
+  opacity: 0;
 }
 
 .Showed {
-    animation: 60ms forwards 60ms fade-in;
-    opacity: 0;
+  animation: 60ms forwards 60ms fade-in;
+  opacity: 0;
 }
 
 .IntroTextBlur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 192px;
-    color: #48ff50;
-    filter: blur(10px);
-    z-index: -10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 192px;
+  color: #48ff50;
+  filter: blur(10px);
+  z-index: -10;
 }
 
 @keyframes fade-in-out {
-    0% {
-        opacity: 0;
-    }
-    45% {
-        opacity: 1;
-    }
-    55% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    45% {
-        opacity: 1;
-    }
-    55% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }

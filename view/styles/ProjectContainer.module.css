@@ -1,0 +1,7 @@
+.ProjectContainer {
+  width: 100%;
+  height: 300px;
+  border: 2px #4850ff;
+  background-color: white;
+  z-index: 99999;
+}

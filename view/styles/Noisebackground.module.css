@@ -1,11 +1,16 @@
 .Noise {
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    width: calc(100vw + 60px);
-    min-height: calc(300vh + 60px);
-    background: repeating-linear-gradient( #00090a, #00090a 70%, #181818 30%, #181818);
-    background-size: 2px 2px;
-    filter: url(#noise);
-    opacity: 1;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: calc(100vw + 60px);
+  min-height: calc(400vh + 60px);
+  background: repeating-linear-gradient(
+    #00090a,
+    #00090a 70%,
+    #181818 30%,
+    #181818
+  );
+  background-size: 2px 2px;
+  filter: url(#noise);
+  opacity: 1;
 }

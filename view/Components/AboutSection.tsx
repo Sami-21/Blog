@@ -4,12 +4,13 @@ import style from "../styles/AboutSection.module.css";
 import CODTextEffect from "./CODTextEffect";
 
 const AboutSection = () => {
-  let Transition1: string = "Mhdqp vq";
-  let Transition2: string = "Kjrsw th";
-  let Transition3: string = "About me";
-  let AboutText: string =
+  const Transition1: string = "Mhdqp vq";
+  const Transition2: string = "Kjrsw th";
+  const Transition3: string = "About me";
+  const AboutText: string =
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos dolorumfuga iure et? Exercitationem, molestiae magnam placeat laboriosameaque inventore deleniti provident similique excepturi cum laborumillo et explicabo nihil sequi delectus animi non voluptatem quo quibusdam! Eos, expedita sit!";
-  const AboutTextTyping = useTextTyping(AboutText, 0);
+  const AboutTextTyping = useTextTyping(AboutText, 10);
+
   return (
     <div className={style.ContentContainer}>
       <CODTextEffect
@@ -18,7 +19,7 @@ const AboutSection = () => {
         Transition3={Transition3}
       ></CODTextEffect>
       <div className={style.TextContainer}>
-        <p className={style.Text}>{AboutText} </p>
+        <p className={style.Text}>{AboutTextTyping} </p>
         <div className={style.MyGIF}></div>
       </div>
     </div>

@@ -1,0 +1,15 @@
+.ContentContainer {
+  width: 100vw;
+  min-height: 750px;
+  padding: 0 100px;
+}
+
+.TextContainer {
+  position: relative;
+  top: 250px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  color: white;
+  overflow: visible;
+}
