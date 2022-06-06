@@ -1,66 +1,100 @@
 .NavBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 150px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #ffffff;
-    background-color: #00090a;
-    z-index: 100;
-    padding: 0 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  background-color: #00090a;
+  z-index: 100;
+  padding: 0 100px;
 }
 
 .logo {
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-    font-size: 124px;
-    color: #48ff50;
-    cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  font-size: 124px;
+  color: #48ff50;
+  cursor: pointer;
 }
 
 .text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
 }
 
 .blur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(-50%);
-    filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  filter: blur(10px);
 }
 
 .NavBarItemsContainer {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70vw;
+  height: 150px;
+  font-size: 64px;
+}
+.burgerMenu {
+  display: none;
+}
+
+@media screen and (max-width: 1066px) {
+  .NavBar {
+    padding: 50px;
+  }
+  .NavBarItemsContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 70vw;
-    height: 150px;
+    background-color: #00090a;
+    width: 100vw;
+    height: 100vh;
     font-size: 64px;
+  }
+  .burgerMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 30px;
+  }
+  .line {
+    width: 100%;
+    height: 5px;
+    background-color: #48ff50;
+  }
 }
 
 .NavBarItem {
-    position: relative;
-    pointer-events: none;
+  position: relative;
+  pointer-events: none;
 }
 
 .ActiveItem {
-    color: #48ff50;
+  color: #48ff50;
 }
 
 .ActiveItem::before {
-    position: absolute;
-    top: -16px;
-    left: 0;
-    content: attr(data-before);
-    color: #48ff50;
-    filter: blur(5px);
-    z-index: -1;
+  position: absolute;
+  top: -16px;
+  left: 0;
+  content: attr(data-before);
+  color: #48ff50;
+  filter: blur(5px);
+  z-index: -1;
 }

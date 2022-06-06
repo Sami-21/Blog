@@ -15,11 +15,6 @@ const WorkSection: React.FC = () => {
         Transition2={Transition2}
         Transition3={Transition3}
       ></CODTextEffect>
-      <ProjectContainer></ProjectContainer>
-      <ProjectContainer></ProjectContainer>
-      <ProjectContainer></ProjectContainer>
-      <ProjectContainer></ProjectContainer>
-      <ProjectContainer></ProjectContainer>
     </div>
   );
 };

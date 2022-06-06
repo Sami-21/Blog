@@ -3,7 +3,7 @@ import style from "../styles/NavBar.module.css";
 
 const NavBar = () => {
   const [isActive, setisActive] = useState([false]);
-  const navigationState: boolean[] = [false, false, false, false, false];
+  let navigationState: boolean[] = [false, false, false, false, false];
   const NavBarItems: string[] = ["About", "Work", "Skills", "Contact", "Blog"];
   const NavBarHandler = (index: number) => {
     let previousActiveIndex = navigationState.findIndex((el) => {
@@ -44,6 +44,11 @@ const NavBar = () => {
           );
         })}
       </ul>
+      <div className={style.burgerMenu}>
+        <span className={style.line}></span>
+        <span className={style.line}></span>
+        <span className={style.line}></span>
+      </div>
     </nav>
   );
 };

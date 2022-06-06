@@ -14,9 +14,9 @@ const Home: NextPage = () => {
       <Noisebackground />
       <NavBar />
       {/* <Intro/>  */}
-      <IntroText />
+      {/* <IntroText />
       <AboutSection />
-      <WorkSection />
+      <WorkSection /> */}
     </div>
   );
 };
